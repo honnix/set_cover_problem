@@ -15,6 +15,7 @@ object SetCoverX extends App {
   val FS = Target
 
   def computeCover(cover: Seq[Set[Int]], price: Int): (Int, Seq[Set[Int]]) = {
+    // for real resolution problem, "contains", "f" and "--" should be revised
     def pricePerElement(selection: (Int, Set[Int])) = {
       def effectiveSize(set: Set[Int]) = set.foldLeft(0)((x, y) => x + (if (FS.contains(y)) 1 else 0))
 
